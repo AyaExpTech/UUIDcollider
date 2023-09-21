@@ -27,6 +27,7 @@ Worker.create = relativePath => {
 
 const threads = [];
 const list = [];
+const checker = Worker.create("checker.js");
 
 const intervalFn = () => {
     /* == スレッド数の調整 == */
@@ -48,19 +49,30 @@ const intervalFn = () => {
             break;
     }
     /* == waitingに入ってる分をまとめてlistへ移動し、被りを確認 == */
-    if (list.length != new Set(list).size) {
-        /* 被りがある場合は停止処理 */
-        for (let i = 0; i < threads.length; i++) threads.shift().terminate();
-        $("#already").value = `yes (${list.length})`;
-        clearInterval(inter);
+    checker.postMessage(list);
+    if ($("#already").value.indexOf("yes") == -1) {
+        setTimeout(intervalFn, 1000);
     }
-    setTimeout(intervalFn, 1000);
 }
+
+checker.addEventListener("message", event => {
+    if (event.data) {
+        setTimeout(() => {
+            /* 被りがある場合は停止処理 */
+            for (let i = 0; i < threads.length; i++) threads.shift().terminate();
+            if ($("#already").value.indexOf("yes") == -1) {
+                $("#already").value = `yes (${list.length})`;
+            }
+        }, 0);
+    }
+});
 
 const updateFn = () => {
     /* == 試行回数を更新 == */
-    $("#attempt").value = list.length;
-    setTimeout(updateFn, 1000 / 24);
+    $("#attempt").value = list.length.toLocaleString();
+    if ($("#already").value.indexOf("yes") == -1) {
+        setTimeout(updateFn, 1000 / 24);
+    }
 }
 
 window.addEventListener("load", () => {

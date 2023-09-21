@@ -16,12 +16,32 @@
     <meta property="og:image" content="https://axtech.dev/img/thumbnail.png">
     <meta name="twitter:card" content="summary">
     <style>
+        * {
+            font-size: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            text-align: center;
+            float: left;
+            width: calc(20% - 2rem);
+        }
+
         input {
             margin-left: 1rem;
+            width: 80%;
+            text-align: right;
+            font-family: monospace;
+        }
 
-            &[type=text] {
-                width: 50%
-            }
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
         }
     </style>
 </head>
