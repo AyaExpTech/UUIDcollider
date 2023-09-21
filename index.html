@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AXT-UUIDCollider</title>
+    <!-- ファイル読み込み -->
+    <script src="script.js"></script>
+    <!-- ==== favicon設定 ==== -->
+    <link rel="icon" href="https://axtech.dev/img/logo.svg">
+    <!-- ==== OGP設定 ==== -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="AXT-UUIDCollider">
+    <meta property="og:description" content="AXT-UUIDCollider">
+    <meta property="og:image" content="https://axtech.dev/img/thumbnail.png">
+    <meta name="twitter:card" content="summary">
+    <style>
+        input {
+            margin-left: 1rem;
+
+            &[type=text] {
+                width: 50%
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>AXT-UUIDCollider</h1>
+    <form action="settings">
+        <label for="threads">スレッド</label><input type="number" id="threads" min="1" value="1"><br>
+        <label for="attempt">試行回数</label><input type="text" id="attempt" readonly><br>
+        <label for="already">被り発生</label><input type="text" id="already" readonly value="no">
+    </form>
+
+</body>
+
+</html>
