@@ -54,11 +54,16 @@ const intervalFn = () => {
         $("#already").value = `yes (${list.length})`;
         clearInterval(inter);
     }
-    /* == 経過秒数と試行回数を更新 == */
+    setTimeout(intervalFn, 100);
+}
+
+const updateFn = () => {
+    /* == 試行回数を更新 == */
     $("#attempt").value = list.length;
-    setTimeout(intervalFn, 1000 / 60);
+    setTimeout(updateFn, 1000 / 30);
 }
 
 window.addEventListener("load", () => {
     intervalFn();
+    updateFn();
 });
