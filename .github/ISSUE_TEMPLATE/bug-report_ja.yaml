@@ -1,0 +1,80 @@
+name: 不具合(バグ)を報告する
+description: 現在公開されているバージョンで起こる不具合(バグ)を報告します。
+title: "バグ : <ここに不具合の内容を簡潔に記入>"
+labels:
+  - バグ
+body:
+  - type: markdown
+    attributes:
+      value: |
+        最新バージョンで起こる不具合について報告します。
+
+        - すでに似た不具合が報告されていないか、[Issue一覧](./)より確認してください。
+        - ある程度状況を再現する方法が確立されているととても助かります。
+            - 「よくわからないけどこうなった」というフィードバックに対応することは全知全能でもない限り無茶である、ということにご留意ください。
+            - 端末・OS・ブラウザがどれかわかるとデバッグがやりやすいです
+        - 必ずしもそれが不具合とは限りません
+            - 「仕様です」と返すこともありえます
+
+  - type: textarea
+    attributes:
+      label: あなたが不具合だと感じている事象は何ですか？
+      description: 「どの画面で何が起こるか」を記入してください。
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: その事象を再現するために、どのような手順をとれば良いと考えられますか？
+      description: |
+        - ページ(アプリ)を開いてから、どのような操作を行うとその事象を再現することができるかを箇条書きで書いてください。
+        - 各行を`- `(半角ハイフンと半角スペース)で始める形で箇条書きすると投稿時にきれいに表示されます。
+            - この行のように"入れ子"にしたい(インデントしたい)場合は、`-`の前に` `(半角スペース)を4つ入れてください。
+                - 半角スペースをさらに4つ増やせば2段階下にすることもできます。
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: その事象が起こっている部分は、本来どのように動くべきだと考えていますか？
+      description: |
+        - 起こるべきであると考える動作を詳しく教えてください。
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: その事象はどの端末で発生しましたか？
+      description: |
+        - その事象を発見したときに使っていた端末(や、再現が成功した端末)の名前を箇条書きで書いてください。
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: その事象はどのブラウザで発生しましたか？
+      description: |
+        - その事象を発見したときに使っていたブラウザ(や、再現が成功したブラウザ)の名前を箇条書きで書いてください。
+        - ブラウザとは`Google Chrome`、`Safari`などのことです。
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: その事象はどのOSで発生しましたか？
+      description: |
+        - その事象を発見したときに使っていたOS(や、再現が成功したOS)の名前とバージョンを箇条書きで書いてください。
+        - iOS/iPadOS端末なら、`[設定]>[一般]>[情報]>[iOSバージョン]`からバージョンを確認できます。
+        - Android端末なら`[設定]>[デバイス情報]>[Androidバージョン]`からバージョンを確認できます。
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 補足があればここに書いてください。
+      description: |
+        - 各種補足情報を箇条書きで書いてください。
+        - 再現に"端末・OS・ブラウザ"以外の条件が必要な場合はここに書いてください。
+        - その他、開発メンバーに伝えるべきと思われることがあればここに書いてください。
+    validations:
+      required: false
