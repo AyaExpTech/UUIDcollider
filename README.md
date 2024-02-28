@@ -1,17 +1,14 @@
-# repository-template
+# UUIDcollider
 
-リポジトリのテンプレートです。
+UUIDv4衝突しねぇかなぁ
 
 ## 使い方
 
-- コピーして使ってください
+webサイトとして開けます
 
 ## 利用規約
 
-Copyright (c) 2023-  
-Ayasaka-Koto
+Copyright (c) 2023- Ayasaka-Koto
 
-以下の規約のいずれかに従ってください。  
-Follow one of the following licenses.
-
-- "AeTOS for Everyone" …… https://axtech.dev/license/#aetos-for-everyone
+日本の法令や公序良俗に反さなければ自由に利用できます。  
+再配布の際は著作者(原作者)としてAyasaka-Kotoを表記してください。
